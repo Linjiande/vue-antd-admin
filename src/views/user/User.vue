@@ -67,10 +67,10 @@
 	} from "./index";
 
 	const formItem = [
-		{ key: "account", type: "input", label: "账号", placeholder: "请输入账号" },
+		{ key: "account", types: "input", label: "账号", placeholder: "请输入账号" },
 		{
 			key: "section",
-			type: "select",
+			types: "select",
 			label: "部门",
 			placeholder: "请选择部门",
 		},

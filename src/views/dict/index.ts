@@ -1,14 +1,14 @@
 import { Column } from "@/models/table/table";
 
-export const url = "/api/orders";
+export const url = "/api/dict";
 
 export const columns: Column[] = [
-	new Column("编号", "key", {
+	new Column("字典名称", "dictName", {
 		sorter: true,
 		sortOrder: false,
 		sortDirections: ["ascend", "descend"],
 	}),
-	new Column("字典名称", "dictDame", {
+	new Column("字典编号", "key", {
 		sorter: true,
 		sortOrder: false,
 		sortDirections: ["ascend", "descend"],

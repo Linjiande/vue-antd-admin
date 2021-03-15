@@ -65,16 +65,16 @@
 		handleDetails,
 	} from "./index";
 
-	const formItem = [
+	const formItem: any[] = [
 		{
 			key: "name",
-			type: "input",
+			types: "input",
 			label: "字典名称",
 			placeholder: "请输入字典名称",
 		},
 		{
 			key: "dictNo",
-			type: "select",
+			types: "select",
 			label: "字典编号",
 			placeholder: "请输入字典编号",
 		},
@@ -94,10 +94,7 @@
 				dictDetail = ref(null);
 
 			// 初始化数据
-			config.getData(url, {
-				pageNo: config.pagination.current,
-				pageSize: config.pagination.pageSize,
-			});
+			config.getData(url);
 
 			return {
 				url,

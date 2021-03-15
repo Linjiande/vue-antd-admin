@@ -3,19 +3,19 @@ import { baseInterface } from "../base/config";
 // 分页器可选配置
 export interface PaginationOptions extends baseInterface {
 	// 当前页数
-	current?: number;
+	current?: Number;
 	// 每页条数
-	pageSize?: number;
+	pageSize?: Number;
 	// 数据总数
-	total?: number;
+	total?: Number;
 	// 只有一页时是否隐藏分页器
-	hideOnSinglePage?: boolean;
+	hideOnSinglePage?: Boolean;
 	// 每页条数选择
-	pageSizeOptions?: string[];
+	pageSizeOptions?: String[];
 	// 是否可以快速跳转至某页
-	showQuickJumper?: boolean;
+	showQuickJumper?: Boolean;
 	// 是否可以改变 pageSize
-	showSizeChanger?: boolean;
+	showSizeChanger?: Boolean;
 	// 用于显示数据总量和当前数据顺序
 	showTotal?: ShowTotal;
 	// 大小
@@ -24,4 +24,4 @@ export interface PaginationOptions extends baseInterface {
 	position?: "top" | "bottom" | "both";
 }
 
-export type ShowTotal = (total: number, range?: any[]) => string;
+export type ShowTotal = (total: Number, range?: any[]) => String;

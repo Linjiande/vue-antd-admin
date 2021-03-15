@@ -1,5 +1,5 @@
 {
-	"name": "vue-admin-antd",
+	"name": "vue-antd-admin",
 	"version": "0.1.0",
 	"private": true,
 	"scripts": {
@@ -17,6 +17,7 @@
 		"vuex": "^4.0.0-0"
 	},
 	"devDependencies": {
+		"@types/mockjs": "^1.0.3",
 		"@vue/cli-plugin-babel": "~4.5.0",
 		"@vue/cli-plugin-router": "~4.5.0",
 		"@vue/cli-plugin-typescript": "~4.5.0",

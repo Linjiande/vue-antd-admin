@@ -15,7 +15,7 @@ export class Pagination extends baseClass implements PaginationOptions {
 			showSizeChanger: true,
 			size: "small",
 			position: "bottom",
-			showTotal: (total: number, range?: any[]) =>
+			showTotal: (total: Number, range?: any[]) =>
 				range
 					? `当前 ${range[0]}-${range[1]} , 共 ${total} 条`
 					: `共 ${total} 条`,
@@ -24,12 +24,12 @@ export class Pagination extends baseClass implements PaginationOptions {
 		super.initOptions(options);
 	}
 
-	onChange(current: number, pageSize: number) {
+	onChange(current: Number, pageSize: Number) {
 		this.current = current;
 		this.pageSize = pageSize;
 	}
 
-	onShowSizeChange(current: number, pageSize: number) {
+	onShowSizeChange(current: Number, pageSize: Number) {
 		this.current = current;
 		this.pageSize = pageSize;
 	}

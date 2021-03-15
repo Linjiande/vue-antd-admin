@@ -13,13 +13,21 @@ export class Table extends baseClass implements TableOptions {
 		super();
 		this.columns = columns;
 
+		// 否则VUE会报类型错误警告Invalid prop: custom validator check failed for prop "pagination".
+		const pagination = new Pagination();
+		pagination.__proto__ = Object.prototype;
+
+		if (options?.rowSelection) {
+			options.rowSelection.__proto__ = Object.prototype;
+		}
+
 		options = {
 			dataSource: [],
 			rowSelection: null,
 			tableLayout: "fixed",
 			loading: false,
 			bordered: true,
-			pagination: new Pagination(),
+			pagination: pagination,
 			rowKey: "id",
 			size: "middle",
 			...options,
@@ -75,6 +83,13 @@ export class Table extends baseClass implements TableOptions {
 	}
 
 	async getData(url: string, params?: any): Promise<boolean> {
+		if (this.pagination) {
+			params = {
+				pageNo: this.pagination.current,
+				pageSize: this.pagination.pageSize,
+				...params,
+			};
+		}
 		try {
 			// 进入加载数据状态
 			this.loading = true;
@@ -82,9 +97,11 @@ export class Table extends baseClass implements TableOptions {
 			const res = await Api.get(url, params);
 
 			if (res.status) {
+				console.log(res.data);
+
 				if (res.data.list && res.data.totalCount) {
 					// 数据赋值
-					this.dataSource = res.data.list as Array<any>;
+					this.dataSource = res.data.list;
 					// 分页
 					this.pagination.total = res.data.totalCount;
 				} else {

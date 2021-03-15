@@ -69,7 +69,7 @@
 	const formItem = [
 		{
 			key: "name",
-			type: "input",
+			types: "input",
 			label: "角色名称",
 			placeholder: "请输入角色名称",
 		},

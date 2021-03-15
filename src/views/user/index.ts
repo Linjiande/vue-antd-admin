@@ -1,6 +1,6 @@
 import { Column } from "@/models/table/table";
 
-export const url = "/api/orders";
+export const url = "/api/user";
 
 export const columns: Column[] = [
 	new Column("编号", "key", {

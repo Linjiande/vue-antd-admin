@@ -1,9 +1,8 @@
-const Mock = require("mockjs");
+import Mock from "mockjs";
 
 Mock.mock(/\/mock\/api\/orders/, "get", (options: any) => {
 	const totalCount = Mock.Random.natural(1, 20),
 		params = options.url.split(/\?/)[1]?.split(/\&/);
-	console.log("mock:", params);
 
 	return {
 		success: true,

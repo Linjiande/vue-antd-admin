@@ -2,12 +2,12 @@
 	<a-form v-bind="tableHeadFormConfig">
 		<a-form-item v-for="item in unfoldInfo.items" v-bind="item" :key="item.key">
 			<a-input
-				v-if="item.type === 'input'"
+				v-if="item.types === 'input'"
 				v-model:value="tableHeadFormConfig.model[item.key]"
 				:placeholder="item.placeholder"
 			></a-input>
 			<a-select
-				v-else-if="item.type === 'select'"
+				v-else-if="item.types === 'select'"
 				v-model:value="tableHeadFormConfig.model[item.key]"
 				:placeholder="item.placeholder"
 			></a-select>
@@ -62,7 +62,7 @@
 					items: [],
 				});
 
-			function unfold(formItem: any[]) {
+			function unfold(formItem: FormItem[]) {
 				unfoldInfo.isUnfold = !unfoldInfo.isUnfold;
 				if (unfoldInfo.isUnfold) {
 					unfoldInfo.items = formItem;
@@ -74,7 +74,7 @@
 				}
 			}
 
-			unfold(props.formItem);
+			unfold(props.formItem as FormItem[]);
 
 			return { tableHeadFormConfig, unfoldInfo, unfold };
 		},
