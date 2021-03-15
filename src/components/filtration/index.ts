@@ -55,7 +55,7 @@ export class TableHeadForm extends Form {
 // 类型
 export interface FormItem {
 	key: string;
-	type: "input" | "select";
+	types: "input" | "select";
 	label: string;
 	placeholder: string;
 }
